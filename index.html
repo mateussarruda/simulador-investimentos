@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="title">
+            <h1 class="main-title">Investment Simulator</h1>
+            <p class="main-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum impedit vero dolorem minima sit doloribus illo magnam nam esse dolores?</p>
+        </div>
+        <div class="container">
+            <h2 class="form-title">Investments Parameters</h2>
+            <form id="form">
+                <label for="IniInv">Inicial Investiments</label>
+                <div class="div-input">
+                    <img src="icons/money.svg" alt="Cifrão">
+                    <input class="tamanho-total" type="number" min="0" value="100" id="IniInv">
+                </div>
+                <label for="MonContr">Monthly Contribution</label>
+                <div class="div-input">
+                    <img src="icons/money.svg" alt="Cifrão">
+                    <input class="tamanho-total" type="number" min="0" value="100" id="MonContr">
+                </div>
+                <div class="InvPeriod">
+                    <label for="invPeriod">Investiments Period</label>
+                    <div class="div-inv-period">
+                        <div class="div-input div-input-period">
+                            <img src="icons/date_range.svg" alt="date range">
+                            <input type="number" id="invPeriod" min="0" value="20">
+                        </div>
+                        <select title="period" name="invPeriod" id="invPeriodSelect">
+                            <option value="year">Year</option>
+                            <option value="month">Month</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="AnualRet">Expected Anual Return</label>
+                <div class="anualRet">
+                    <input id="anualRateRange" type="range" min="1" max="20" value="10">
+                    <input id="anualRateInput" type="number" min="1" max="20" value="10">
+                    <span>%</span>
+                </div>
+            </form>
+        </div>
+        <div class="content">
+            <div class="chart">
+                <div id="chart_div"></div>
+            </div>
+    
+            <div class="summary">
+                <h2>Investiments Summary</h2>
+                <p>Result after <span>20 years</span> of investing</p>
+                <div class="cards">
+                    <div class="card  finalValue">
+                        <img src="icons/target-summary.svg" alt="">
+                        <div class="card-content">
+                            <h3>Final Value</h3>
+                            <p id="finalValue">R$0,00</p>
+                        </div>
+                    </div>
+                    <div class="card totalContr">
+                        <img src="icons/money-summary.svg" alt="">
+                        <div class="card-content">
+                            <h3>Total Contributions</h3>
+                            <p id="totalContr">R$0,00</p>
+                        </div>
+                    </div>
+                    <div class="card totalReturns totalContr">
+                        <img src="icons/trending_up-summary.svg" alt="">
+                        <div class="card-content finalValue">
+                            <h3>Total Returns</h3>
+                            <p id="totalReturnsValue">R$0,00</p>
+                        </div>
+                    </div>
+                    <div class="card ReturnsInvestiments">
+                        <img src="icons/calendar-summary.svg" alt="">
+                        <div class="card-content finalValue">
+                            <h3>Returns on Investiments</h3>
+                            <p id="returnsInvestiments">0%</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="warning">
+                        <p>
+                            <span class="emphasis">Great news!</span> Your investement returns (<span class="warning-return">$170,851</span>) exceed your total contribution (<span class="warning-contribution">$130,000</span>) by <span class="warning-exceed">$40,851</span>
+                        </p>
+                    </div>
+            </div>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, est quibusdam? Fugiat accusantium perspiciatis, velit provident similique, rem voluptates a excepturi facere explicabo, esse sequi eaque magnam temporibus atque. Nisi?</p>
+        </div>
+    </main>
+    <script src="scripts/script.js" type="module"></script>
+    <script src="scripts/summary.js" type="module"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
+</html>
