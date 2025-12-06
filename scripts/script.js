@@ -112,12 +112,37 @@ function drawChart() {
     console.log(valores);
     data.addRows(valores);
     let options = {'title': 'Investimento ao longo do tempo',
+                    'legend': {
+                        position: 'right',
+                        textStyle: {
+                            fontSize: 15
+                        }
+                    },
                     'width': 800,
                     'height': 300,
-                    'pointSize': 5,
+                    'pointSize': 3,
+                    'vAxis': {
+                        textStyle: {
+                            fontSize: 15
+                        },
+                        gridlines: {
+                            count: 8
+                        }
+                    },
+                    'hAxis': {
+                        showTextEvery: 1,
+                        slantedText: true,
+                        textStyle: {
+                            fontSize: 15
+                        }
+                    },
                     'chartArea': {
+                        top: '10%',
                         width: '90%',
-                        height: '80%'
+                        height: '80%',
+                        bottom: '20%',
+                        left: '8%',
+                        right: '16%'
                     },
                     'colors': ['green', 'blue', '#000f6e', '#00049f', '#f6c706'],
     };
@@ -128,7 +153,6 @@ function drawChart() {
         console.log('erro 1');
     }
 }
-
 
 invPeriod.addEventListener('input', () => {
     tempoDeInvestimento.textContent = getTempoDeInvestimento();
