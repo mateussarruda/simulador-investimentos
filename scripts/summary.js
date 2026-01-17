@@ -52,7 +52,8 @@ window.addEventListener('load', () => {
     let totalReturnsFormatado = formataData(getTotalReturns());
     let returnsOnInvestimentFormatado = formataPorcentagem(getReturnsOnInvestiment());
     let finalValueFormatado = formataData(getFinalValue());
-    finalValue.textContent = `R$ ${finalValueFormatado}`;    summaryContr.textContent = `R$ ${totalContributionFormadado}`;
+    finalValue.textContent = `R$ ${finalValueFormatado}`;
+    summaryContr.textContent = `R$ ${totalContributionFormadado}`;
     totalReturns.textContent = `R$ ${totalReturnsFormatado}`;
     returnOnInvestiment.textContent = `${returnsOnInvestimentFormatado}%`;
     warningReturns.textContent = `R$ ${totalReturnsFormatado}`;

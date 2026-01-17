@@ -160,3 +160,7 @@ invPeriod.addEventListener('input', () => {
 periodSelect.addEventListener('input', () => {
     tempoDeInvestimento.textContent = getTempoDeInvestimento();
 });
+form.addEventListener('change', () => {
+    let inputDatas = getDataInput();
+    datas = calculaDados2(...inputDatas);
+})
