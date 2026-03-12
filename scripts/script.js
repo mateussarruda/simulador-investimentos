@@ -4,7 +4,6 @@ const iniInv = document.querySelector('#IniInv');
 const MonContr = document.querySelector('#MonContr');
 const invPeriod = document.querySelector('#invPeriod');
 const periodSelect = document.querySelector('#invPeriodSelect');
-const tempoDeInvestimento = document.querySelector('#tempoDeInvestimento');
 export const form = document.querySelector('#form');
 try {
     google.charts.load('current', {'packages': ['corechart']});
@@ -31,21 +30,6 @@ export function getDataInput() {
         data.push(Number(invPeriod.value));
     }
     return data;
-}
-
-function getTempoDeInvestimento() {
-    let tempo = invPeriod.value;
-    let retorno = '';
-    if (periodSelect.value === 'year') {
-        retorno = `${tempo} years`;
-    } else {
-        if (tempo % 12 === 0) {
-            retorno = `${tempo} years`;
-        } else {
-            retorno = `${Math.floor(tempo / 12)}  years and ${tempo % 12} months`;
-        }
-    }
-    return retorno;
 }
 
 export function formataData(valor) {
@@ -154,13 +138,13 @@ function drawChart() {
     }
 }
 
-invPeriod.addEventListener('input', () => {
-    tempoDeInvestimento.textContent = getTempoDeInvestimento();
-});
-periodSelect.addEventListener('input', () => {
-    tempoDeInvestimento.textContent = getTempoDeInvestimento();
-});
-form.addEventListener('change', () => {
+form.addEventListener('input', () => {
     let inputDatas = getDataInput();
     datas = calculaDados2(...inputDatas);
-})
+    try {
+        google.charts.setOnLoadCallback(drawChart);
+    } catch(error) {
+        console.log('error');
+    }
+
+});
